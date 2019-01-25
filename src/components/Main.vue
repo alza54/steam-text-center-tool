@@ -110,6 +110,27 @@ export default {
   methods: {
 
     copy () {
+
+      var decodeEntities = (function () {
+        // this prevents any overhead from creating the object each time
+        var element = document.createElement('div');
+
+        function decodeHTMLEntities (str) {
+          if(str && typeof str === 'string') {
+            // strip script/html tags
+            str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
+            str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
+            element.innerHTML = str;
+            str = element.textContent;
+            element.textContent = '';
+          }
+
+          return str;
+        }
+
+        return decodeHTMLEntities;
+      })();
+
       var output = this.editor;
       output = output.replace(/&nbsp;/g, ' ');
       output = output.replace(/<h1>/g, '[h1]').replace(/<\/h1>/g, '[/h1]\n');
@@ -122,6 +143,7 @@ export default {
       output = output.replace(/<span class="quill-precision" title="Precision">﻿<span contenteditable="false"><span contenteditable="false">[0-9]*\.[0-9]*%<\/span><\/span>﻿<\/span>/g, '');
       var r = /<img src="https:\/\/steamcommunity-a\.akamaihd\.net\/economy\/emoticon\/(\w+)">/g;
       output = output.replace(r, `:$1:`);
+      output = decodeEntities(output);
       this.$copyText(output).then(e => {
         alert(this.$t('copied'));
       }, e => {
