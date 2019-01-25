@@ -1,0 +1,66 @@
+@import "animate.min.scss";
+
+$licorice: #121111;
+$light-gray: #d3d0cb;
+$white: #fff;
+
+body {
+  font-family: roboto, arial, sans-serif;
+}
+
+.video-js .vjs-tech {
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  width: auto !important;
+  height: auto !important;
+  filter: blur(3px);
+}
+
+.cf-stream-menu {
+  display: none !important;
+}
+
+.ql-editor > h1 {
+  font-size: 15px !important;
+  color: #5aa9d6 !important;
+  font-weight: normal;
+}
+
+.ql-toolbar.ql-snow, .ql-container.ql-snow {
+  color: $white;
+}
+
+.ql-toolbar.ql-snow {
+  border: none !important;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+}
+
+.ql-snow .ql-stroke {
+  stroke: $white;
+}
+
+.ql-snow .ql-fill, .ql-snow .ql-stroke.ql-fill {
+  fill: $white;
+}
+
+.ql-editor.ql-blank::before {
+  color: $white !important;
+}
+
+.quill-precision {
+  font-size: .7em;
+  background: #1c1b1c;
+  border-radius: 3px;
+  padding: 2px;
+  margin-left: 8px;
+  position: absolute;
+  user-select: none;
+}
+
+.v--modal {
+  max-height: 534px;
+  user-select: none;
+}
