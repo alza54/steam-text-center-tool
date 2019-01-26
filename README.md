@@ -1,6 +1,14 @@
 # Steam Text Center Tool by shellcode.team
 A tool which automatically centers text for your Steam profile.
 
+:sparkling_heart: User-friendly interface
+:sparkles: Editor can be used not only for centering text, because it is handy
+:collision: Two symbols used for text centering
+:watch: Text centering precision displayed per line
+:raised_hands: Multiple centering modes
+:rat: Vue.js, Sass, Webpack & Koa, Nightmare.js
+:u5272: Language translations
+
 ## Install
 
 `git clone https://github.com/alza54/steam-text-center-tool.git`
