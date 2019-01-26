@@ -50,9 +50,13 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true, data: `
+          $animationDuration: 0.5s;
+          @import "@/../node_modules/animate.css/animate.min";
           @import "@/assets/scss/_variables.scss";
         ` }),
     scss: generateLoaders('sass', { data: `
+          $animationDuration: 0.5s;
+          @import "@/../node_modules/animate.css/animate.min";
           @import "@/assets/scss/_variables.scss";
         ` }),
     stylus: generateLoaders('stylus'),
