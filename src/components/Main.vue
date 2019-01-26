@@ -172,7 +172,6 @@ export default {
       output = output.replace(/<br>/g, '\n');
       var r = /<img src="https:\/\/steamcommunity-a\.akamaihd\.net\/economy\/emoticon\/(\w+)">/g;
       output = output.replace(r, `e`); // single character because image is embed
-      console.log(output, this.$refs.mainQuill.quill.getText());
       return output;
     },
 
