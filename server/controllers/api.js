@@ -51,8 +51,7 @@ const calculate = async function (params, lines) {
     var precision = [];
     async.mapSeries(lines, async (line, callback) => {
 
-      var isH1 = false;
-      line.indexOf('<h1>') === 0 && (isH1 = true);
+      var isH1 = line.indexOf('<h1>') === 0;
       isH1 && (line = line.substring(4, line.length));
 
       line.indexOf('<p>') === 0 && (line = line.substring(3, line.length));
@@ -85,27 +84,27 @@ const calculate = async function (params, lines) {
       var chars = isH1 ? WHITESPACE_CHARACTERS_HEADER : WHITESPACE_CHARACTERS;
 
       let t = 0, s = 0, p = 0, whitespaces = '';
-      find(chars, (parseInt(params.width) - (rect.width + emoticons.length * 18)) / 2).forEach(i => {
-
+      for (const i of find(chars, (parseInt(params.width) - (rect.width + emoticons.length * 18)) / 2)) {
         t += i;
 
         if (isH1) {
-          if (i === 9.76318359375) {
+          if (i === 9.76318359375) { // String.fromCharCode(10240) width
             whitespaces += String.fromCharCode(10240);
           } else {
             whitespaces += String.fromCharCode(8202);
           }
         } else {
-          if (i === 8.46142578125) {
+          if (i === 8.46142578125) { // String.fromCharCode(10240) width
             whitespaces += String.fromCharCode(10240);
           } else {
             whitespaces += String.fromCharCode(8202);
           }
         }
+      }
 
-      });
-
+      // Precision
       s = (t * 2 / (parseInt(params.width) - (rect.width + emoticons.length * 18))) * 100;
+      // in pixels
       p = t * 2 - ((parseInt(params.width) - (rect.width + emoticons.length * 18)));
 
       precision.push({ prec: s.toFixed(2), left: p.toFixed(2) });
