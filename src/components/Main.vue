@@ -27,10 +27,6 @@
   			<span>{{ $t("center") }}</span>
   		</a>
     </div>
-    <modal transition="scale" height="auto" width="80%" :max-width="832" adaptive name="donate-modal">
-      <img style="width:100%;height:auto;" src="/static/donate.png"/>
-      <div class="donate-buttons">PayPal</div>
-    </modal>
   </div>
 </template>
 
@@ -91,7 +87,7 @@ export default {
                       return { insert: {} };
                     }
                   }
-                  return { insert: op.insert };
+                  return op;
                 })
                 return delta
               }]
@@ -149,10 +145,6 @@ export default {
       }, e => {
         alert(this.$t('cannotCopy'));
       });
-      if (this.textCentered && !localStorage.getItem('donate-modal')) {
-        // this.$modal.show('donate-modal');
-        // localStorage.setItem('donate-modal', true);
-      }
     },
 
     reset () {
@@ -358,12 +350,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     max-width: 90vw;
-  }
-
-  .donate-buttons {
-    position: absolute;
-    right: 25%;
-    bottom: 10%;
   }
 
   // Steam

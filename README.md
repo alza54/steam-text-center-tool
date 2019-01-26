@@ -38,7 +38,7 @@ PROXYPASS=pass
 
 Beacuse of using Koa2, `Node.js >= v7.6.0` is needed.
 
-#### Development (front-end, no API): 
+#### Development (front-end, no API):
 
 `npm run dev` && `npm run server`
 
@@ -46,6 +46,11 @@ open browser: `localhost:8080`
 
 #### Production:
 
-`npm run start` 
+`npm run start`
 
 open browser: `localhost:8889`
+
+- [x] Prepare polish locales
+- [ ] Prepare english locales
+- [ ] Prepare german locales
+- [ ] Prepare russian locales
