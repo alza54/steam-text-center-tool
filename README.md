@@ -1,6 +1,8 @@
 # Steam Text Center Tool by shellcode.team
 A tool which automatically centers text for your Steam profile.
 
+https://center.shellcode.team/
+
 :sparkling_heart: User-friendly interface
 
 :sparkles: Editor can be used not only for centering text, because it is handy
