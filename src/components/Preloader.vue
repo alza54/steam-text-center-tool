@@ -11,6 +11,7 @@
       <p>{{ $t("preloaderLines.six") }}</p>
     </div>
     <div id="typed-container" v-bind:class="completedWatch"><span id="typed"></span></div>
+    <div id="skip" @click="skip">skip</div>
   </div>
 </template>
 
@@ -31,6 +32,13 @@ export default {
       hide: false,
       exit: false
     }
+  },
+  methods: {
+
+    skip (e) {
+      this.exit = true;
+    }
+
   },
   mounted () {
 
@@ -168,6 +176,17 @@ export default {
     font-weight: 400;
     font-style: normal;
     font-size: 1.2em;
+  }
+
+  #skip {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: #fff;
+    letter-spacing: .1em;
+    text-transform: lowercase;
+    font-weight: bold;
+    cursor: pointer;
   }
 
 </style>
