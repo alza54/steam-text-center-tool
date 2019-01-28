@@ -66,6 +66,7 @@ open browser: `localhost:8080`
 
 open browser: `localhost:8889`
 
+#### TO-DO:
 - [x] Prepare polish locales
 - [x] Prepare english locales
 - [ ] Prepare german locales
