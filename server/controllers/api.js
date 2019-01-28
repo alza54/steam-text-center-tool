@@ -1,23 +1,31 @@
 import { find } from './algorithms.js';
 
-import '../../env'
+import '../../env';
 
 const WHITESPACE_CHARACTERS = [ 8.46142578125, 1.08544921875 ];
 const WHITESPACE_CHARACTERS_HEADER = [ 9.76318359375, 1.25244140625 ];
 
+const path = require('path');
+const fs = require('fs');
+const purifyPath = 'node_modules/dompurify/dist/purify.min.js';
+const dompurify = fs.readFileSync(path.resolve(purifyPath), 'utf8');
+
 const async = require('async');
-const Nightmare = require('nightmare')
+const Nightmare = require('nightmare');
 const nightmare = Nightmare({
   show: false,
   switches: {
     'proxy-server': process.env.PROXYURL
   }
-})
+});
 
 nightmare
   .authentication(process.env.PROXYLOGIN, process.env.PROXYPASS)
   .goto('https://steamcommunity.com/id/shellcode')
   .wait('.showcase_notes')
+  .evaluate(dompurify => {
+    eval(dompurify);
+  }, dompurify)
   .then(() => console.log('Nightmare ready'))
   .catch(error => {
     console.error(error)
@@ -28,10 +36,10 @@ async function performCheck (text, isH1) {
     try {
       const rect = await nightmare.evaluate((x, isH1) => {
         if (isH1) {
-          document.querySelector('.showcase_notes').innerHTML = `<div class="bb_h1"><span>${x}</span></div>`;
+          document.querySelector('.showcase_notes').innerHTML = DOMPurify.sanitize(`<div class="bb_h1"><span>${x}</span></div>`);
           var { width, height } = document.querySelector('.showcase_notes .bb_h1 span').getBoundingClientRect();
         } else {
-          document.querySelector('.showcase_notes').innerHTML = `<span>${x}</span>`;
+          document.querySelector('.showcase_notes').innerHTML = DOMPurify.sanitize(`<span>${x}</span>`);
           var { width, height } = document.querySelector('.showcase_notes span').getBoundingClientRect();
         }
         return { width, height };
