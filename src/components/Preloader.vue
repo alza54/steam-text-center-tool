@@ -11,7 +11,7 @@
       <p>{{ $t("preloaderLines.six") }}</p>
     </div>
     <div id="typed-container" v-bind:class="completedWatch"><span id="typed"></span></div>
-    <div id="skip" @click="skip">skip</div>
+    <div id="skip" @click="skip">{{ $t("skip") }}</div>
   </div>
 </template>
 
@@ -97,7 +97,8 @@ export default {
           "four": "If you have any questions or problems, please contact the author by sending an e-mail (expl0it@shellcode.team),",
           "five": "by writing on Discord (mordzaty#3839), or Steam (id/shellcode). The source code can be found on GitHub.",
           "six": "Have fun and beauuuutiful profile!"
-        }
+        },
+        "skip": "skip"
       },
       "pl": {
         "preloaderLines": {
@@ -107,7 +108,8 @@ export default {
           "four": "W razie pytań lub problemów prosimy o kontakt z autorem wysyłając e-mail (expl0it@shellcode.team),",
           "five": "pisząc na Discord (mordziaty#3839), lub Steam (id/shellcode). Kod źródłowy znajdziesz na GitHubie.",
           "six": "Dobrej zabawy i piękneeeego profilu!"
-        }
+        },
+        "skip": "pomiń"
       }
     }
   }
