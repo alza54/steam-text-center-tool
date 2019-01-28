@@ -321,12 +321,13 @@ export default {
 
   #main svg#logo {
     max-width: 150px;
-    margin-left: 25px;
+    margin-left: -10px;
   }
 
   #main svg#Shellcode {
     max-width: 100px;
     height: 30px;
+    margin-left: -13px;
   }
 
   #main p {
