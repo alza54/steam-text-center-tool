@@ -105,7 +105,9 @@ export default {
   },
   methods: {
 
-    copy () {
+    copy (e) {
+
+      e.preventDefault();
 
       var decodeEntities = (function () {
         // this prevents any overhead from creating the object each time
@@ -147,7 +149,8 @@ export default {
       });
     },
 
-    reset () {
+    reset (e) {
+      e.preventDefault();
       this.editor = '';
     },
 
@@ -186,7 +189,8 @@ export default {
       });
     },
 
-    centerText () {
+    centerText (e) {
+      e.preventDefault();
       this.$http.post('/api/text/center', { text: this.editor, width: this.width })
         .then(data => {
           if (data.data.success) {
