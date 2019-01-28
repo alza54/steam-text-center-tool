@@ -83,12 +83,12 @@ export default {
     messages: {
       "en": {
         "preloaderLines": {
-          "one": "Mamy zaszczyt przedstawić Ci nasze zupełnie nowe narzędzie do środkowania tekstu na Steam.",
-          "two": "Cieszymy się, że poprzednia wersja została ciepło przyjęta przez społeczność, zatem przygotowaliśmy nową, lepszą.",
-          "three": "Mamy nadzieję, że korzystanie z tego narzędzia będzie dla Ciebie samą wygodą i przyjemnością.",
-          "four": "W razie pytań lub problemów prosimy o kontakt z autorem wysyłając e-mail (expl0it@shellcode.team),",
-          "five": "pisząc na Discord (mordziaty#3839), lub Steam (id/shellcode). Kod źródłowy znajdziesz na GitHubie.",
-          "six": "Dobrej zabawy i piękneeeego profilu!"
+          "one": "We are proud to present you our completely new tool for text centering on Steam.",
+          "two": "We are happy that the previous version has been warmly welcomed by the community, so we have prepared a new, better one.",
+          "three": "We hope that using this tool will be only convenience and pleasure for you.",
+          "four": "If you have any questions or problems, please contact the author by sending an e-mail (expl0it@shellcode.team),",
+          "five": "by writing on Discord (mordzaty#3839), or Steam (id/shellcode). The source code can be found on GitHub.",
+          "six": "Have fun and beauuuutiful profile!"
         }
       },
       "pl": {
