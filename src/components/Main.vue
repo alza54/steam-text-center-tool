@@ -321,7 +321,7 @@ export default {
 
   #main svg#logo {
     max-width: 150px;
-    margin-left: -10px;
+    margin-left: 10px;
   }
 
   #main svg#Shellcode {
