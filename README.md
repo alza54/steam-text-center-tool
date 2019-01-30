@@ -71,3 +71,4 @@ open browser: `localhost:8889`
 - [x] Prepare english locales
 - [ ] Prepare german locales
 - [ ] Prepare russian locales
+- [ ] Experimental client-side text width calculation
